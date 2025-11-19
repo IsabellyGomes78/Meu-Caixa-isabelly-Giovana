@@ -3,7 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/navigation_dashboard">
+    app:startDestination="@id/navigation_login">
+
+    <!-- Tela de Login -->
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.oliveira.minhacaixa.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/navigation_dashboard"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/navigation_register" />
+    </fragment>
+
+    <!-- Tela de Cadastro -->
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.oliveira.minhacaixa.RegisterFragment"
+        android:label="Cadastro"
+        tools:layout="@layout/fragment_register" />
 
     <!-- Tela Dashboard -->
     <fragment
@@ -18,7 +41,6 @@
         android:name="com.oliveira.minhacaixa.ProductListFragment"
         android:label="Meus Produtos"
         tools:layout="@layout/fragment_product_list">
-        <!-- A action local foi removida daqui -->
     </fragment>
 
     <!-- Tela Adicionar/Editar -->
@@ -47,9 +69,6 @@
         android:label="Relatórios"
         tools:layout="@layout/fragment_reports" />
 
-    <!-- ======================================================= -->
-    <!--     AÇÃO GLOBAL PARA ABRIR A TELA DE ADICIONAR/EDITAR   -->
-    <!-- ======================================================= -->
     <action
         android:id="@+id/action_global_to_addEditProduct"
         app:destination="@id/addEditProductFragment" />

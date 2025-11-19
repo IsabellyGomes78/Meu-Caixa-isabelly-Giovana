@@ -16,12 +16,6 @@ public class User {
     @ColumnInfo(name = "email")
     public String email;
 
-    @ColumnInfo(name = "birth_date")
-    public String birthDate;
-
-    @ColumnInfo(name = "cpf")
-    public String cpf;
-
     @ColumnInfo(name = "password")
     public String password;
 }

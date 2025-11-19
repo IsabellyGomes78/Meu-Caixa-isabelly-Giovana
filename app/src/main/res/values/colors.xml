@@ -7,7 +7,7 @@
     <!-- Tons de Verde -->
     <color name="green_200">#A5D6A7</color>
     <color name="green_500">#4CAF50</color>
-    <color name="green_700">#388E3C</color> <!-- COR ADICIONADA -->
+    <color name="green_700">#388E3C</color>
 
     <!-- Tons de Cinza -->
     <color name="gray_200">#EEEEEE</color>
@@ -15,8 +15,14 @@
     <color name="gray_400">#BDBDBD</color>
     <color name="gray_600">#757575</color>
     <color name="gray_700">#616161</color>
-    <color name="gray_900">#212121</color> <!-- COR ADICIONADA -->
+    <color name="gray_900">#212121</color>
 
     <!-- Tons de Vermelho -->
     <color name="red_500">#F44336</color>
+
+    <!-- Cores inspiradas no Banco Inter -->
+    <color name="inter_green">#00C853</color> <!-- Verde para botões -->
+    <color name="inter_text_gray">#545454</color> <!-- Cinza para texto -->
+    <color name="inter_border_gray">#D8D8D8</color> <!-- Cinza para bordas -->
+
 </resources>

@@ -28,7 +28,6 @@ android {
         }
     }
 
-    // --- CORREÇÃO: Atualizando a compatibilidade do Java para a versão 17 ---
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -57,6 +56,12 @@ dependencies {
     // Room
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
+
+    // Google Sign-In
+    implementation("com.google.android.gms:play-services-auth:21.1.0")
+
+    // Circle ImageView
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
     // Testes
     testImplementation("junit:junit:4.13.2")

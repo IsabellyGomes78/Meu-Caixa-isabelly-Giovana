@@ -7,49 +7,56 @@
     android:background="?attr/colorSurface"
     tools:context=".LoginFragment">
 
-    <!-- GRUPO: Login Manual -->
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/manual_login_group"
+    <!-- Logo e Nome do App -->
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/ic_logo_app" 
+        app:layout_constraintEnd_toStartOf="@+id/app_title"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/app_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="welcome_title,email,password,login_button,google_login_button,register_text_view,error_text_view" />
+        android:layout_marginStart="16dp"
+        android:text="Meu Caixa"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/app_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/app_logo"
+        app:layout_constraintTop_toTopOf="@+id/app_logo" />
 
-    <!-- GRUPO: Login Google Reconhecido -->
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/google_welcome_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:constraint_referenced_ids="google_profile_image,google_user_name,google_user_email,google_continue_button,switch_account_button" />
-
-
-    <!-- =========================================== -->
-    <!--          Componentes do Login Manual          -->
-    <!-- =========================================== -->
-
+    <!-- Título de Boas-Vindas -->
     <TextView
         android:id="@+id/welcome_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:text="Bem vindo"
         android:textColor="?attr/colorOnSurface"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/app_logo" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/name_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/edit_text_border"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress"
+        android:hint="Nome ou parte do nome"
+        android:inputType="textPersonName"
         android:padding="16dp"
         android:textColor="?attr/colorOnSurface"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,31 +64,31 @@
         app:layout_constraintTop_toBottomOf="@+id/welcome_title" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/birth_date_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_border"
-        android:hint="Senha"
-        android:inputType="textPassword"
+        android:hint="Data de Nascimento (senha)"
+        android:inputType="date"
         android:padding="16dp"
         android:textColor="?attr/colorOnSurface"
-        app:layout_constraintEnd_toEndOf="@+id/email"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintEnd_toEndOf="@+id/name_input"
+        app:layout_constraintStart_toStartOf="@+id/name_input"
+        app:layout_constraintTop_toBottomOf="@+id/name_input" />
 
     <TextView
         android:id="@+id/error_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Usuário ou senha inválidos."
+        android:text="Nome ou data de nascimento inválidos."
         android:textAlignment="center"
         android:textColor="@color/red_500"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintEnd_toEndOf="@+id/birth_date_input"
+        app:layout_constraintStart_toStartOf="@+id/birth_date_input"
+        app:layout_constraintTop_toBottomOf="@+id/birth_date_input" />
 
     <Button
         android:id="@+id/login_button"
@@ -92,24 +99,9 @@
         android:padding="16dp"
         android:text="Entrar"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
-
-    <Button
-        android:id="@+id/google_login_button"
-        style="@style/Widget.Material3.Button.OutlinedButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:padding="16dp"
-        android:text="Entrar com o Google"
-        android:textColor="?attr/colorOnSurface"
-        app:cornerRadius="100dp"
-        app:layout_constraintEnd_toEndOf="@+id/login_button"
-        app:layout_constraintStart_toStartOf="@+id/login_button"
-        app:layout_constraintTop_toBottomOf="@+id/login_button"
-        app:strokeColor="@color/inter_border_gray" />
+        app:layout_constraintEnd_toEndOf="@+id/birth_date_input"
+        app:layout_constraintStart_toStartOf="@+id/birth_date_input"
+        app:layout_constraintTop_toBottomOf="@+id/birth_date_input" />
 
     <TextView
         android:id="@+id/register_text_view"
@@ -120,74 +112,6 @@
         android:textColor="?attr/colorOnSurface"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/google_login_button" />
-
-
-    <!-- =================================================== -->
-    <!--     NOVO LAYOUT - Componentes do Login com Google   -->
-    <!-- =================================================== -->
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/google_profile_image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        app:civ_border_color="@color/inter_green"
-        app:civ_border_width="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/google_user_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/google_user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="?attr/colorOnSurface"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Isabelly Gomes" />
-
-    <TextView
-        android:id="@+id/google_user_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textColor="?attr/colorOnSurface"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/google_user_name"
-        tools:text="isabelly.gomes@example.com" />
-
-    <Button
-        android:id="@+id/google_continue_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/inter_green"
-        android:padding="16dp"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/google_user_email"
-        tools:text="Continuar como Isabelly" />
-
-    <TextView
-        android:id="@+id/switch_account_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:padding="8dp"
-        android:text="Trocar conta"
-        android:textColor="?attr/colorOnSurface"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/google_continue_button" />
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

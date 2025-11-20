@@ -29,8 +29,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
 
@@ -40,6 +40,9 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.activity:activity:1.9.0")
+
+    // Biometria
+    implementation("androidx.biometric:biometric:1.1.0")
 
     // GridLayout
     implementation("androidx.gridlayout:gridlayout:1.0.0")
@@ -56,12 +59,6 @@ dependencies {
     // Room
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
-
-    // Google Sign-In
-    implementation("com.google.android.gms:play-services-auth:21.1.0")
-
-    // Circle ImageView
-    implementation("de.hdodenhof:circleimageview:3.1.0")
 
     // Testes
     testImplementation("junit:junit:4.13.2")

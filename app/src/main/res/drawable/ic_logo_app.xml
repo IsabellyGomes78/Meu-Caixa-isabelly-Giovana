@@ -1,0 +1,55 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Base da Caixa (Preto) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M2,19 h20 a1,1 0 0,1 0,2 h-20 a1,1 0 0,1 0,-2 z" />
+
+    <!-- Corpo da Caixa (Verde com Borda Preta) -->
+    <path
+        android:fillColor="#75BF68"
+        android:strokeColor="#000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M5,19 L7,9 h10 l2,10 Z" />
+
+    <!-- Tela/Display (Topo) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M9,6 h6 v-3 h-6 z" />
+
+    <!-- Haste da Tela -->
+    <path
+        android:fillColor="#000000"
+        android:strokeColor="#000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="square"
+        android:pathData="M12,6 v3" />
+
+    <!-- Detalhes/Botões da Caixa -->
+    <!-- Quadrado Esquerdo -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9,13 h2 v2 h-2 z" />
+
+    <!-- Linhas Direita -->
+    <path
+        android:strokeColor="#000000"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M14,12 h3 M14,15 h3" />
+
+</vector>

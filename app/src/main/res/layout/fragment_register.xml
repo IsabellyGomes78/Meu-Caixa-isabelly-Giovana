@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?attr/colorSurface" 
     android:fillViewport="true"
     tools:context=".RegisterFragment">
 
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Faça Seu Cadastro"
-            android:textColor="@color/inter_text_gray"
+            android:textColor="?attr/colorOnSurface" 
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,35 +35,24 @@
             android:hint="Nome Completo"
             android:inputType="textPersonName"
             android:padding="16dp"
+            android:textColor="?attr/colorOnSurface"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/register_title" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/birth_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/edit_text_border"
-            android:hint="E-mail"
-            android:inputType="textEmailAddress"
+            android:hint="Data de Nascimento (dd/mm/aaaa)"
+            android:inputType="date"
             android:padding="16dp"
+            android:textColor="?attr/colorOnSurface"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/full_name" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edit_text_border"
-            android:hint="Senha"
-            android:inputType="textPassword"
-            android:padding="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email" />
 
         <Button
             android:id="@+id/register_button"
@@ -76,7 +65,7 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password" />
+            app:layout_constraintTop_toBottomOf="@+id/birth_date" />
 
         <TextView
             android:id="@+id/login_text_view"
@@ -84,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Já tem uma conta? Faça login"
-            android:textColor="@color/inter_text_gray"
+            android:textColor="?attr/colorOnSurface" 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/register_button" />

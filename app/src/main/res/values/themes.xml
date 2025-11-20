@@ -9,6 +9,12 @@
         <item name="colorSecondary">@color/black</item>
         <item name="colorOnSecondary">@color/white</item>
 
+        <!-- ESTILO GLOBAL DOS BOTÕES -->
+        <item name="materialButtonStyle">@style/MyRoundedButton</item>
+
+        <!-- **CORREÇÃO: Aplicando o estilo da barra de navegação ao tema** -->
+        <item name="bottomNavigationStyle">@style/MyBottomNavigationView</item>
+
         <!-- Atributos Customizados -->
         <item name="fabIconColor">@color/white</item>
         <item name="editTextBackground">@drawable/edit_text_background</item>
@@ -19,12 +25,34 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <!-- Estilo para arredondar todos os botões -->
+    <style name="MyRoundedButton" parent="Widget.Material3.Button">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.MyApp.Button.Rounded</item>
+    </style>
+
+    <style name="ShapeAppearance.MyApp.Button.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
     <!-- Estilo do FAB -->
     <style name="MyFloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
         <item name="backgroundTint">@color/green_500</item>
         <item name="tint">?attr/fabIconColor</item>
         <item name="strokeColor">@color/black</item>
         <item name="strokeWidth">2dp</item>
+    </style>
+
+    <!-- Estilo para a Barra de Navegação -->
+    <style name="MyBottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/bottom_nav_icon_color_selector</item>
+        <item name="itemTextColor">@color/bottom_nav_icon_color_selector</item>
+        <item name="itemActiveIndicatorStyle">@style/MyBottomNavigationView.ActiveIndicator</item>
+    </style>
+
+    <!-- Estilo para o Indicador Ativo -->
+    <style name="MyBottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/green_200</item>
     </style>
 
 </resources>

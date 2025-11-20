@@ -13,9 +13,8 @@ public class User {
     @ColumnInfo(name = "full_name")
     public String fullName;
 
-    @ColumnInfo(name = "email")
-    public String email;
+    // A data de nascimento será armazenada como a "senha"
+    @ColumnInfo(name = "birth_date_password")
+    public String birthDate;
 
-    @ColumnInfo(name = "password")
-    public String password;
 }

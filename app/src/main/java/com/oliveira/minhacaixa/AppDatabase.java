@@ -7,8 +7,8 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-// A versão do banco de dados foi incrementada para 3
-@Database(entities = {Product.class, Venda.class, ItemVenda.class, User.class}, version = 3, exportSchema = false)
+// A versão do banco de dados foi incrementada para 4
+@Database(entities = {Product.class, Venda.class, ItemVenda.class, User.class}, version = 4, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract ProductDao productDao();

@@ -25,17 +25,16 @@
         android:id="@+id/divider_view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="?attr/colorOnSurface" 
+        android:background="?attr/colorOnSurface"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav_view" />
 
-    <!-- A Barra de Navegação Inferior -->
+    <!-- A Barra de Navegação Inferior com o novo estilo -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_view"
+        style="@style/MyBottomNavigationView" 
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?attr/colorSurface"
-        app:itemIconTint="@color/bottom_nav_icon_color_selector"
-        app:itemTextColor="@color/bottom_nav_icon_color_selector"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

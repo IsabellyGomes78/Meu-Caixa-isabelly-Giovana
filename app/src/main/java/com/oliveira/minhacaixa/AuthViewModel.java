@@ -5,11 +5,11 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-public class LoginViewModel extends AndroidViewModel {
+public class AuthViewModel extends AndroidViewModel {
 
     private final UserDao userDao;
 
-    public LoginViewModel(@NonNull Application application) {
+    public AuthViewModel(@NonNull Application application) {
         super(application);
         AppDatabase db = AppDatabase.getDatabase(application);
         userDao = db.userDao();
@@ -17,7 +17,7 @@ public class LoginViewModel extends AndroidViewModel {
 
     // Lógica para login com nome e data de nascimento
     public LiveData<User> login(String name, String birthDatePassword) {
+        // Reutiliza a mesma lógica de login do LoginViewModel
         return userDao.login(name, birthDatePassword);
     }
-
 }

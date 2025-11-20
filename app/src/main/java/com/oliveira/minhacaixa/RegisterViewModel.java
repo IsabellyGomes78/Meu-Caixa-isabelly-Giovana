@@ -26,15 +26,14 @@ public class RegisterViewModel extends AndroidViewModel {
         return registrationStatus;
     }
 
-    public void registerUser(String fullName, String email, String password) {
+    public void registerUser(String fullName, String birthDate) {
         databaseWriteExecutor.execute(() -> {
-            if (userDao.findUserByEmail(email) != null) {
-                registrationStatus.postValue(false); // Usuário já existe
+            if (userDao.findUserByFullName(fullName) != null) {
+                registrationStatus.postValue(false); // Usuário com este nome já existe
             } else {
                 User newUser = new User();
                 newUser.fullName = fullName;
-                newUser.email = email;
-                newUser.password = password;
+                newUser.birthDate = birthDate;
                 userDao.insert(newUser);
                 registrationStatus.postValue(true); // Cadastro bem-sucedido
             }

@@ -3,7 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/navigation_login">
+    app:startDestination="@id/navigation_auth"> 
+
+    <!-- Nova Tela de Autenticação (ponto de partida) -->
+    <fragment
+        android:id="@+id/navigation_auth"
+        android:name="com.oliveira.minhacaixa.AuthFragment"
+        android:label="Autenticação"
+        tools:layout="@layout/fragment_auth">
+        <action
+            android:id="@+id/action_authFragment_to_loginFragment"
+            app:destination="@id/navigation_login"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_authFragment_to_dashboardFragment"
+            app:destination="@id/navigation_dashboard"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <!-- Tela de Login -->
     <fragment
@@ -35,15 +53,12 @@
         android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
-    <!-- Tela Lista de Produtos -->
+    <!-- Outras Telas... -->
     <fragment
         android:id="@+id/navigation_products"
         android:name="com.oliveira.minhacaixa.ProductListFragment"
         android:label="Meus Produtos"
-        tools:layout="@layout/fragment_product_list">
-    </fragment>
-
-    <!-- Tela Adicionar/Editar -->
+        tools:layout="@layout/fragment_product_list" />
     <fragment
         android:id="@+id/addEditProductFragment"
         android:name="com.oliveira.minhacaixa.AddEditProductFragment"
@@ -54,21 +69,16 @@
             app:argType="long"
             android:defaultValue="-1L" />
     </fragment>
-
-    <!-- Tela Nova Venda -->
     <fragment
         android:id="@+id/navigation_sale"
         android:name="com.oliveira.minhacaixa.NewSaleFragment"
         android:label="Nova Venda"
         tools:layout="@layout/fragment_new_sale" />
-
-    <!-- Tela Relatórios -->
     <fragment
         android:id="@+id/navigation_reports"
         android:name="com.oliveira.minhacaixa.ReportsFragment"
         android:label="Relatórios"
         tools:layout="@layout/fragment_reports" />
-
     <action
         android:id="@+id/action_global_to_addEditProduct"
         app:destination="@id/addEditProductFragment" />

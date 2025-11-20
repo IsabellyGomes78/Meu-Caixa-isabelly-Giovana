@@ -34,8 +34,10 @@ public class RegisterFragment extends Fragment {
         Button registerButton = view.findViewById(R.id.register_button);
 
         EditText fullName = view.findViewById(R.id.full_name);
-        EditText email = view.findViewById(R.id.email);
-        EditText password = view.findViewById(R.id.password);
+        EditText birthDate = view.findViewById(R.id.birth_date);
+
+        // **NOVA LÓGICA: Adiciona a máscara de data**
+        birthDate.addTextChangedListener(new DateInputMask(birthDate));
 
         loginTextView.setOnClickListener(v -> {
             NavHostFragment.findNavController(RegisterFragment.this).popBackStack();
@@ -43,10 +45,9 @@ public class RegisterFragment extends Fragment {
 
         registerButton.setOnClickListener(v -> {
             String fullNameStr = fullName.getText().toString();
-            String emailStr = email.getText().toString();
-            String passwordStr = password.getText().toString();
+            String birthDateStr = birthDate.getText().toString();
 
-            mViewModel.registerUser(fullNameStr, emailStr, passwordStr);
+            mViewModel.registerUser(fullNameStr, birthDateStr);
         });
 
         mViewModel.getRegistrationStatus().observe(getViewLifecycleOwner(), isSuccess -> {
@@ -54,7 +55,7 @@ public class RegisterFragment extends Fragment {
                 Toast.makeText(getContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
                 NavHostFragment.findNavController(RegisterFragment.this).popBackStack();
             } else {
-                Toast.makeText(getContext(), "Este e-mail já está em uso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Um usuário com este nome já existe!", Toast.LENGTH_SHORT).show();
             }
         });
     }
